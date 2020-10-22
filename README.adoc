@@ -33,10 +33,8 @@ Embedded H2, Postgres.
 
 
 == Create Application
-Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` class with the components:
+Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` class:
 
-`src/main/java/com/sdbawa/mmts/MoviesManagementAndTrackingApplication.java`
-[source,java]
 ----
 include::/main/java/com/sdbawa/mmts/MoviesManagementAndTrackingApplication.java[]
 ----
@@ -48,13 +46,18 @@ One vertical slice contains the end to end code with an idea no two domains shar
 
 == Common code
 
-Lookups and Events are shared concerns of the application. +
+Following are shared concerns of the application located in. +
+/com/sdbawa/mmts/common/* +
 
-Lookups +
-com.sdbawa.mmts.domain.statuslookup is a shared code for all the domains +
+/com/sdbawa/mmts/domain/events/* +
 
-Events +
-ApplicationEvents can be found in com.sdbawa.mmts.domain.events.* +
+/com/sdbawa/mmts/domain/statuslookup/* +
+
+=== Lookups
+com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains  +
+
+=== Application Events
+ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
 
 ----
 LoadStatusLookUpOnBootstrap.java is responsible to provide lookups from in-memory to
@@ -86,6 +89,7 @@ You will notice the output like this for a successful start of application:
 2020-10-22 13:37:40.989  INFO 30880 --- [-10.105.254.188] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-10-22 13:37:41.002  INFO 30880 --- [-10.105.254.188] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
 
+
 Application is running at port 8080.
 ....
 
@@ -97,14 +101,15 @@ The result should show records.
 
 This validates application is working fine.
 
-....
-
 ----
 Spring ApplicationEvent
 
 ApplicationEvents can be found in com.sdbawa.mmts.domain.events.*
 
 select * from MOVIE_BUDGET_EVENTS - This should have NO records
+
+....
+== APIs
 
 Add Endorsement
 
@@ -141,6 +146,7 @@ Response:
 }
 
  select * from MOVIE_BUDGET_EVENTS - There should be 2 records with each event
+....
 ----
 
 
