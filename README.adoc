@@ -110,43 +110,51 @@ ApplicationEvents can be found in com.sdbawa.mmts.domain.events.*
 select * from MOVIE_BUDGET_EVENTS - This should have NO records
 
 ........
-== APIs
 
+== APIs
+........
 Add Endorsement
 
-http://localhost:8080/endorsement/add
-Request: 
-{
-	"endorsementId" : 122,
-	"amount" : 500000,
-	"movieId" : 1
-}
+http://localhost:8080/endorsement/add +
 
+Request: +
+{ +
+	"endorsementId" : 122, +
+	"amount" : 500000, +
+	"movieId" : 1 +
+} +
 
-Response :
-{
-    "message": "success"
-}
+Response : +
+{ +
+    "message": "success" +
+} +
 
-Update Actor status to confirm signining contract
+........
 
-http://localhost:8080/actor/status
+........
+Update Actor status to confirm signing contract
 
-Request:
-{
-	"actorId" : 1,
-	"statusId": 6,
-	"amount" : 100000,
-	"movieId" : 1
+http://localhost:8080/actor/status +
 
-}
+Request: +
+{ +
+	"actorId" : 1, +
+	"statusId": 6, +
+	"amount" : 100000, +
+	"movieId" : 1 +
+} +
 
-Response:
-{
-    "message": "success"
-}
+Response: +
+{ +
+    "message": "success" +
+} +
+........
 
- select * from MOVIE_BUDGET_EVENTS - There should be 2 records with each event
+== Verification
+........
+ check database : select * from MOVIE_BUDGET_EVENTS +
+
+ There should be 2 records with each event
 ........
 
 
