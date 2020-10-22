@@ -5,8 +5,8 @@
 :icons: font
 :source-highlighter: prettify
 
-This projects helps demonstrate clean, flexible, and maitainable code by levraging the following language constructs for Java,SpringBoot applications <br/>
-1. Usage of javax.validators <br/>
+This projects helps demonstrate clean, flexible, and maitainable code by levraging the following language constructs for Java,SpringBoot applications  (+)
+1. Usage of javax.validators +
 2. Usage of @ExceptionsHandlers, and @ControllerAdvice <br/>
 3. Usage of Vertical Slicing for domain oriented design <br/>
 4. Usage of Single Table design using Relational database to improve application performance  <br/>
