@@ -91,7 +91,7 @@ You will notice the output like this for a successful start of application:
 
 
 Application is running at port 8080.
-....
+........
 
 == In memory H2 database and app data
 Check out data in-memory H2 database. http://localhost:8080/h2-console/
@@ -108,7 +108,7 @@ ApplicationEvents can be found in com.sdbawa.mmts.domain.events.*
 
 select * from MOVIE_BUDGET_EVENTS - This should have NO records
 
-....
+........
 == APIs
 
 Add Endorsement
@@ -146,7 +146,7 @@ Response:
 }
 
  select * from MOVIE_BUDGET_EVENTS - There should be 2 records with each event
-....
+........
 ----
 
 
