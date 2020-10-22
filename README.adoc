@@ -26,13 +26,8 @@ Postgres
 You'll build a springboot application as metioned in the 
 
 
-== What you'll need
 
-java_version: 1.11 
-Spring ApplicationEvents 
-
-
-Pleae check pom.xml for a list of all dependencies for other functionalities : 
+Please check pom.xml for a list of all dependencies for other functionalities : 
 Embedded H2, Postgres.
 
 
