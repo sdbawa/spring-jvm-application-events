@@ -1,0 +1,22 @@
+{
+  "year" : 2000,
+  "status" : "ON_HOLD",
+  "title": "title",
+  "budget": 12100000,
+  "info" : {
+            "releaseYear" : 2021,
+            "actors" : [
+              "David Mathewman",
+             "Anne Thomas"
+            ],
+            "directors" : [
+              "Alice Smithers",
+              "Bobby Jonas"
+            ],
+            "genres" : [
+            "Comedy",
+            "Drama"
+            ],
+            "runningTime":2148
+  }
+ }

@@ -1,0 +1,49 @@
+--DROP TABLE IF EXISTS STATUS_LOOKUP;
+CREATE TABLE STATUS_LOOKUP (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    type VARCHAR(50) NOT NULL
+);
+
+CREATE SEQUENCE incrOneSeq START WITH 1 INCREMENT BY 1;
+
+--DROP TABLE IF EXISTS MOVIE;
+CREATE TABLE MOVIE (
+    id INT PRIMARY KEY,
+    title VARCHAR(250) NOT NULL,
+    year INT NOT NULL,
+    status_id INT REFERENCES STATUS_LOOKUP(id),
+    total_budget numeric(10,0) NOT NULL
+);
+--
+-- --InitialCost
+-- --ActorSignIn
+-- --RevenueFromEndorsements
+-- --RevenueFromSellingRights
+--DROP TABLE IF EXISTS MOVIE_BUDGET_EVENTS;
+CREATE TABLE MOVIE_BUDGET_EVENTS (
+    id INT PRIMARY KEY,
+    movie_id INT REFERENCES MOVIE(id),
+    event VARCHAR(250) NOT NULL,
+    amount numeric(7,0) NOT NULL,
+    create_date timestamp NOT NULL
+);
+--
+--DROP TABLE IF EXISTS ACTOR;
+CREATE TABLE ACTOR (
+    id INT PRIMARY KEY,
+    first_name VARCHAR(250) NOT NULL,
+    last_name VARCHAR(250) NOT NULL,
+    gender_id INT REFERENCES STATUS_LOOKUP(id),
+    status_id INT REFERENCES STATUS_LOOKUP(id),
+    amount numeric(9,0) NOT NULL DEFAULT 0
+);
+
+--DROP TABLE IF EXISTS DIRECTOR;
+CREATE TABLE DIRECTOR (
+    id INT PRIMARY KEY,
+    first_name VARCHAR(250) NOT NULL,
+    last_name VARCHAR(250) NOT NULL,
+    gender_id INT REFERENCES STATUS_LOOKUP(id),
+    status_id INT REFERENCES STATUS_LOOKUP(id)
+);
