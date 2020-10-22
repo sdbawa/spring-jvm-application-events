@@ -73,7 +73,7 @@ Application Configurations can be found in com.sdbawa.mmts.config.* +
 == Web Layer Tests
 `src.test.com.sdbawa.mmts.controller.*` provides web layer tests for the RESTful APIs
 
-== Run the application
+== Running the application
 To run the application, using Maven, execute:
 
 [subs="attributes"]
@@ -94,16 +94,17 @@ Application is running at port 8080.
 ........
 
 == In memory H2 database and app data
+........
 Check out data in-memory H2 database. http://localhost:8080/h2-console/
 
 SELECT * FROM MOVIE
 The result should show records.
 
 This validates application is working fine.
+........
 
-----
-Spring ApplicationEvent
-
+== Spring ApplicationEvent
+........
 ApplicationEvents can be found in com.sdbawa.mmts.domain.events.*
 
 select * from MOVIE_BUDGET_EVENTS - This should have NO records
@@ -147,6 +148,6 @@ Response:
 
  select * from MOVIE_BUDGET_EVENTS - There should be 2 records with each event
 ........
-----
+
 
 
