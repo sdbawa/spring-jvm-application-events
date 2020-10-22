@@ -32,10 +32,10 @@ Embedded H2, Postgres.
 
 
 
-== Create an com.graphql.Application class
-Here you create an `com.graphql.Application` class with the components:
+== Create Application
+Here you create an `com.sdbawa.mmts.SpringeventsdemoApplication` class with the components:
 
-`src/main/java/hello/Application.java`
+`src/main/java/com//sdbawa/movies/Application.java`
 [source,java]
 ----
 include::complete/src/main/java/hello/Application.java[]

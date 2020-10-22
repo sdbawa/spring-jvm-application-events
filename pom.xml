@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.sdbawa.movies</groupId>
-    <artifactId>springeventsdemo</artifactId>
+    <artifactId>mmts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springeventsdemo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>Movies Management And Tracking System</name>
+    <description>Demo project for Clean code practices using Java,Spring Boot ecosystem</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
