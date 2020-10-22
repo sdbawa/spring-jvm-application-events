@@ -5,22 +5,17 @@
 :icons: font
 :source-highlighter: prettify
 
-This projects helps demonstrate clean, flexible, and maitainable code by levraging the following language constructs for Java,SpringBoot applications  +
-1. Usage of javax.validators +
-2. Usage of @ExceptionsHandlers, and @ControllerAdvice +
-3. Usage of Vertical Slicing for domain oriented design +
-4. Usage of Single Table design using Relational database to improve application performance  +
-5. Usage of Spring ApplicationEvents for Event driven components +
+This projects helps demonstrate clean, flexible, and maintainable code by leveraging the following language constructs for
+Java,SpringBoot applications as described in post here .
 
-The description is provided in post here :
 
+== What you need!
 ----
-Java 11 or above
-SpringBoot 
+Java 11
+SpringBoot 2.x
 Embedded H2
 Postgres
 ----
-
 
 == What you'll build
 You'll build a java springboot application that demonstrate the following:
@@ -30,7 +25,6 @@ You'll build a java springboot application that demonstrate the following:
 3. Vertical slicing to develop decomposable monolith +
 4. Single Table design approach +
 5. Developing event driven components using ApplicationEvent +
-
 
 
 Please check pom.xml for a list of all dependencies for other functionalities : 
@@ -47,7 +41,7 @@ Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` clas
 include::/main/java/com/sdbawa/mmts/MoviesManagementAndTrackingApplication.java[]
 ----
 
-== Domain classes
+== Application Domain classes
 The domain actor code can be found in  src/main/java/com/sdbawa/mmts/domain/*
 The code for higher order domain actors are vertically sliced. exp. movie, actor.
 One vertical slice contains the end to end code with an idea no two domains share code.
@@ -57,10 +51,10 @@ One vertical slice contains the end to end code with an idea no two domains shar
 Lookups and Events are shared concerns of the application. +
 
 Lookups +
-com.sdbawa.mmts.domain.statuslookup is a shared code for all the domains
+com.sdbawa.mmts.domain.statuslookup is a shared code for all the domains +
 
-Events+
-ApplicationEvents can be found in com.sdbawa.mmts.domain.events.*
+Events +
+ApplicationEvents can be found in com.sdbawa.mmts.domain.events.* +
 
 ----
 LoadStatusLookUpOnBootstrap.java is responsible to provide lookups from in-memory to
@@ -68,6 +62,10 @@ all modules in application. Also, this class is responsible to load all lookups 
 at startup.
 
 ----
+
+== Config
+Application Configurations can be found in com.sdbawa.mmts.config.* +
+
 
 == Web Layer Tests
 `src.test.com.sdbawa.mmts.controller.*` provides web layer tests for the RESTful APIs
@@ -77,10 +75,10 @@ To run the application, using Maven, execute:
 
 [subs="attributes"]
 ----
-mvn package && java -jar target/graphql-java-server-0.1.0.jar
+mvn package && java -jar target/mmts-0.0.1-SNAPSHOT.jar
 ----
 
-You should see some output like this:
+You will notice the output like this for a successful start of application:
 
 ........
 2020-10-22 13:37:40.148  INFO 30880 --- [main] m.MoviesManagementAndTrackingApplication : Started MoviesManagementAndTrackingApplication in 6.297 seconds (JVM running for 8.511)
@@ -88,8 +86,10 @@ You should see some output like this:
 2020-10-22 13:37:40.989  INFO 30880 --- [-10.105.254.188] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-10-22 13:37:41.002  INFO 30880 --- [-10.105.254.188] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
 
-This application is running at port 8080.
+Application is running at port 8080.
 ....
+
+== In memory H2 database and app data
 Check out data in-memory H2 database. http://localhost:8080/h2-console/
 
 SELECT * FROM MOVIE
