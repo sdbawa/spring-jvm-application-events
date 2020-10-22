@@ -6,8 +6,8 @@
 :icons: font
 :source-highlighter: prettify
 
-This projects helps demonstrate clean, flexible, and maintainable code by leveraging the following language constructs for
-Java,SpringBoot applications as described in post here .
+This projects helps demonstrate clean, flexible, and maintainable code by leveraging the programming constructs
+from Java,SpringBoot applications as described in post here .
 
 
 == What you need!
@@ -16,9 +16,11 @@ Java 11
 SpringBoot 2.x
 Embedded H2
 Postgres
+maven
 ----
 
 == What you'll build
+........
 You'll build a java springboot application that demonstrate the following:
 
 1. Clean User Request Validation +
@@ -26,50 +28,60 @@ You'll build a java springboot application that demonstrate the following:
 3. Vertical slicing to develop decomposable monolith +
 4. Single Table design approach +
 5. Developing event driven components using ApplicationEvent +
+........
 
-
+== Dependencies
+........
 Please check pom.xml for a list of all dependencies for other functionalities : 
 Embedded H2, Postgres.
-
-
+........
 
 == Create Application
 Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` class:
 
 ----
-include::/main/java/com/sdbawa/mmts/MoviesManagementAndTrackingApplication.java[]
+include::src/main/java/com/sdbawa/mmts/MoviesManagementAndTrackingApplication.java[]
 ----
 
-== Application Domain classes
-The domain actor code can be found in  src/main/java/com/sdbawa/mmts/domain/*
-The code for higher order domain actors are vertically sliced. exp. movie, actor.
-One vertical slice contains the end to end code with an idea no two domains share code.
+== Application Domain
+........
+The domain code can be found in  src/main/java/com/sdbawa/mmts/domain/* +
+
+The code for higher order domain actors are vertically sliced. exp. movie, actor. +
+
+One vertical slice contains the end to end code with an idea no two domains share code. +
+........
 
 == Common code
 
-Following are shared concerns of the application located in. +
+........
+Shared concerns of the application located in. +
 /com/sdbawa/mmts/common/* +
 
 /com/sdbawa/mmts/domain/events/* +
 
 /com/sdbawa/mmts/domain/statuslookup/* +
+........
+
 
 === Lookups
-com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains  +
+`com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains.
 
 === Application Events
-ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
+`ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
 
 ----
-LoadStatusLookUpOnBootstrap.java is responsible to provide lookups from in-memory to
-all modules in application. Also, this class is responsible to load all lookups in-memory
-at startup.
-
+LoadStatusLookUpOnBootstrap.java is responsible to serve lookups from in-memory to
+all modules in application.
+Also, this class is responsible to load all lookups in-memory during bootstrap.
 ----
 
 == Config
-Application Configurations can be found in com.sdbawa.mmts.config.* +
+`Application Configurations can be found in com.sdbawa.mmts.config.* +
 
+== DB schema
+In memory H2 schema is located at src/main/resources/schema.sql +
+In memory H2 data is located at src/main/resources/data.sql +
 
 == Web Layer Tests
 `src.test.com.sdbawa.mmts.controller.*` provides web layer tests for the RESTful APIs
