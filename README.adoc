@@ -60,7 +60,7 @@ Shared concerns of the application located in
 
 
 === Lookups
-`com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains.
+com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains.
 
 === Application Events
 ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
@@ -76,8 +76,8 @@ Application Configurations can be found in com.sdbawa.mmts.config.* +
 
 == DB schema
 ----
-In memory H2 schema is located at src/main/resources/schema.sql +
-In memory H2 data is located at src/main/resources/data.sql +
+In memory H2 schema is located at src/main/resources/schema.sql
+In memory H2 data is located at src/main/resources/data.sql
 ----
 
 == Web Layer Tests
@@ -98,10 +98,11 @@ You will notice the output like this for a successful start of application:
 2020-10-22 13:37:40.988  INFO 30880 --- [-10.105.254.188] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-10-22 13:37:40.989  INFO 30880 --- [-10.105.254.188] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-10-22 13:37:41.002  INFO 30880 --- [-10.105.254.188] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
-
-
-Application is running at port 8080.
 ........
+
+== Port
+Application is running at port 8080.
+
 
 == In memory H2 database and app data
 ........
