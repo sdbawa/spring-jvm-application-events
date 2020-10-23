@@ -105,12 +105,12 @@ Application is running at port 8080.
 
 == In memory H2 database and app data
 ........
-Check out data in-memory H2 database. http://localhost:8080/h2-console/
+Data in H2 database can be found at http://localhost:8080/h2-console/
 
 SELECT * FROM MOVIE
-The result should show records.
+The result should show records from initial data load at startup.
 
-This validates application is working fine.
+Verification : This validates start up of application in correct state.
 ........
 
 == Spring ApplicationEvent
@@ -158,13 +158,15 @@ Response: +
 { +
     "message": "success" +
 } +
+
+Please also check Controller test cases in `src/test/java/com/sdbawa/mmts/controller` for test on more APIs.
 ........
 
 == Verification
 ........
  check database : select * from MOVIE_BUDGET_EVENTS +
 
- There should be 2 records with each event
+ There should be 2 records with each event verifying the Event driven components.
 ........
 
 
