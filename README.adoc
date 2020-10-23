@@ -158,9 +158,9 @@ Response: +
 { +
     "message": "success" +
 } +
+........
 
 Please also check Controller test cases in `src/test/java/com/sdbawa/mmts/controller` for test on more APIs.
-........
 
 == Verification
 ........
