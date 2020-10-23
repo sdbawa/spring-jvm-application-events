@@ -24,18 +24,16 @@ maven
 You'll build a Java, SpringBoot application with minimal microservices dependencies
 demonstrating the following:
 
-1. Clean User Request Validation +
-2. Decouple exception handling code form business logic +
-3. Vertical slicing to develop decomposable monolith +
-4. Single Table design approach +
-5. Developing event driven components using ApplicationEvent +
+1. Clean User Request Validation
+2. Decouple exception handling code form business logic
+3. Vertical slicing to develop decomposable monolith
+4. Single Table design approach
+5. Developing event driven components using ApplicationEvent
 ........
 
 == Dependencies
-........
-Please check pom.xml for a list of all dependencies for other functionalities : 
-Embedded H2, Postgres.
-........
+Please check `pom.xml` for a list of all dependencies for other functionalities.
+
 
 == Create Application
 Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` Application:
