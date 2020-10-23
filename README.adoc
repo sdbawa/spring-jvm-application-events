@@ -6,8 +6,8 @@
 :icons: font
 :source-highlighter: prettify
 
-This projects helps demonstrate clean, flexible, and maintainable code by leveraging the programming constructs
-from Java,SpringBoot applications as described in post here .
+This projects helps demonstrate `clean, flexible, and maintainable code` by leveraging the programming constructs
+from `Java,SpringBoot` applications as described in post here .
 
 
 == What you need!
@@ -21,7 +21,8 @@ maven
 
 == What you'll build
 ........
-You'll build a java springboot application that demonstrate the following:
+You'll build a Java, SpringBoot application with minimal microservices dependencies
+demonstrating the following:
 
 1. Clean User Request Validation +
 2. Decouple exception handling code form business logic +
@@ -60,10 +61,10 @@ Shared concerns of the application located in
 
 
 === Lookups
-com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains.
+`com.sdbawa.mmts.domain.statuslookup` manages and provides status lookups all domains.
 
 === Application Events
-ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
+ApplicationEvents used across application can be found in `com.sdbawa.mmts.domain.events.*` +
 
 ----
 LoadStatusLookUpOnBootstrap.java is responsible to serve lookups from in-memory to
@@ -72,7 +73,7 @@ Also, this class is responsible to load all lookups in-memory during bootstrap.
 ----
 
 == Config
-Application Configurations can be found in com.sdbawa.mmts.config.* +
+Application Configurations can be found in `com.sdbawa.mmts.config.*`
 
 == DB schema
 ----
