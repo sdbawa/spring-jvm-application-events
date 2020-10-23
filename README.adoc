@@ -37,30 +37,25 @@ Embedded H2, Postgres.
 ........
 
 == Create Application
-Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` class:
-
-----
-include::src/main/java/com/sdbawa/mmts/MoviesManagementAndTrackingApplication.java[]
-----
+Here you create an `com.sdbawa.mmts.MoviesManagementAndTrackingApplication` Application:
 
 == Application Domain
 ........
-The domain code can be found in  src/main/java/com/sdbawa/mmts/domain/* +
+The domain code can be found in  src/main/java/com/sdbawa/mmts/domain/*
 
-The code for higher order domain actors are vertically sliced. exp. movie, actor. +
+The code for higher order domain actors are vertically sliced. exp. movie, actor.
 
-One vertical slice contains the end to end code with an idea no two domains share code. +
+One vertical slice contains the end to end code with an idea no two domains share code.
 ........
 
 == Common code
 
 ........
-Shared concerns of the application located in. +
-/com/sdbawa/mmts/common/* +
+Shared concerns of the application located in
 
-/com/sdbawa/mmts/domain/events/* +
-
-/com/sdbawa/mmts/domain/statuslookup/* +
+/com/sdbawa/mmts/common/*
+/com/sdbawa/mmts/domain/events/*
+/com/sdbawa/mmts/domain/statuslookup/*
 ........
 
 
@@ -68,7 +63,7 @@ Shared concerns of the application located in. +
 `com.sdbawa.mmts.domain.statuslookup manages and provides status lookups all domains.
 
 === Application Events
-`ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
+ApplicationEvents used across application can be found in com.sdbawa.mmts.domain.events.* +
 
 ----
 LoadStatusLookUpOnBootstrap.java is responsible to serve lookups from in-memory to
@@ -77,11 +72,13 @@ Also, this class is responsible to load all lookups in-memory during bootstrap.
 ----
 
 == Config
-`Application Configurations can be found in com.sdbawa.mmts.config.* +
+Application Configurations can be found in com.sdbawa.mmts.config.* +
 
 == DB schema
+----
 In memory H2 schema is located at src/main/resources/schema.sql +
 In memory H2 data is located at src/main/resources/data.sql +
+----
 
 == Web Layer Tests
 `src.test.com.sdbawa.mmts.controller.*` provides web layer tests for the RESTful APIs
