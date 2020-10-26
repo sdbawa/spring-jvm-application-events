@@ -7,7 +7,7 @@
 :source-highlighter: prettify
 
 This projects helps demonstrate `clean, flexible, and maintainable code` by leveraging the programming constructs
-from `Java,SpringBoot` applications as described in post here .
+from `Java,SpringBoot` applications as described in post here https://bawa-simar.medium.com/demystifying-design-principles-to-develop-clean-modularized-high-performance-jvm-applications-431e3f1dee8e
 
 
 == What you need!
